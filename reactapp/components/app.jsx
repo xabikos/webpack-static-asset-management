@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
+import loremIpsum from 'lorem-ipsum';
 
 import '../styles/style.scss'
 
-import loremIpsum from 'lorem-ipsum';
-
 import Counter from './counter.jsx';
+import logo from '../images/logo.png';
 
 class App extends Component {
   render() {
@@ -14,6 +14,7 @@ class App extends Component {
     });
     return (
       <div>
+        <a href="#"><img alt="SKG nodejs meetup" src={logo} /></a>
         {result}
         <div id="counter">
           <Counter />

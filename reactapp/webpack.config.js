@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: './index.js',
@@ -18,8 +19,12 @@ module.exports = {
       },
       {
         test: /\.scss/,
-        loaders: ["style", "css", "sass"]
+        loaders: ["style", "css", "postcss", "sass"]
       },
+      {
+        test: /\.png/,
+        loader: "url?limit=10000&minetype=image/png"
+      }
     ]
   },
   devServer: {
@@ -38,4 +43,7 @@ module.exports = {
       filename: 'index.html'
     }),
   ],
+  postcss: function () {
+    return [autoprefixer];
+  }
 };

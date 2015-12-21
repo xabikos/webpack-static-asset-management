@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^6.2.1",
     "babel-core": "^6.3.21",
     "babel-loader": "^6.2.0",
     "babel-plugin-react-transform": "^2.0.0-beta1",
@@ -17,10 +18,12 @@
     "css-loader": "^0.23.0",
     "html-webpack-plugin": "^1.7.0",
     "node-sass": "^3.4.2",
+    "postcss-loader": "^0.8.0",
     "react": "^0.14.3",
     "react-transform-hmr": "^1.0.1",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
   },
