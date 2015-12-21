@@ -10,5 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "webpack": "^1.12.9"
+  },
+  "dependencies": {
+    "lorem-ipsum": "^1.0.3"
   }
 }

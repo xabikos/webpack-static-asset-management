@@ -1,6 +1,9 @@
-var ContentGenerator = require('./contentGenerator');
+var loremIpsum = require('lorem-ipsum')
 
-var innerText = ContentGenerator.getParagraphs(5);
+var innerText = loremIpsum({
+  count: 5,
+  units: 'sentences'
+});
 
 var appNode = document.getElementById('app');
 appNode.innerText = innerText;
