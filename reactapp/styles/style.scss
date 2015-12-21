@@ -2,5 +2,9 @@ $body-padding: 50px;
 
 body{
   padding: $body-padding;
-  background-color: red;
+}
+
+#counter {
+  margin-top: 30px;
+  background-color: yellowgreen;
 }
