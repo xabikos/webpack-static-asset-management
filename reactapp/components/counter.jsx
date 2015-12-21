@@ -20,7 +20,7 @@ class Counter extends Component {
 	render() {
     return (
 			<div>
-		    <span id="seconds">{this.state.timeElapsed} </span> seconds has passed the component was loaded
+		    <span id="seconds">{this.state.timeElapsed} </span> seconds has passed since the component was loaded
 			</div>
 		);
 	}
