@@ -16,5 +16,16 @@ module.exports = {
         exclude: /node_modules/
       }
     ]
-  }
+  },
+  devServer: {
+    host: "0.0.0.0",
+    port: "3000",
+    colors: true,
+    historyApiFallback: true,
+    hot: true,
+    inline: true
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
 };
