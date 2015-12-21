@@ -1,9 +1,9 @@
-var loremIpsum = require('lorem-ipsum')
+import loremIpsum from 'lorem-ipsum';
 
-var innerText = loremIpsum({
+const innerText = loremIpsum({
   count: 5,
   units: 'sentences'
 });
 
-var appNode = document.getElementById('app');
+const appNode = document.getElementById('app');
 appNode.innerText = innerText;
