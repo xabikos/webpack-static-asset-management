@@ -1,7 +1,9 @@
 import loremIpsum from 'lorem-ipsum';
 
+import '../styles/style.scss'
+
 const innerText = loremIpsum({
-  count: 5,
+  count: 15,
   units: 'sentences'
 });
 
