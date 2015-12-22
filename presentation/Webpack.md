@@ -1,6 +1,6 @@
 title: Static Asset management in modern web development with webpack
 author: Babis Karypidis (xabikos)
-description: An introduction on static asset management resources in modern web development with webpack
+description: An introduction to static asset management in modern web development with webpack
 date: <%= Date.today %>
 % available themes: Default - Sky - Beige - Simple - Serif - Night - Moon - Solarized
 theme: simple
@@ -14,7 +14,7 @@ custom_css: presentation
 ## Static asset management with webpack
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-An introduction on static asset management resources in modern web development with webpack
+An introduction to static asset management in modern web development with webpack
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -59,4 +59,24 @@ An introduction on static asset management resources in modern web development w
 
 * A modern module bundler for JavaScript and much more
 * An extremely powerful tool during development (weback-dev-server) 
-* Can be an important toll for the preperations of productions resources
+* Could be an important toll for the preparations of productions resources
+
+!SLIDE
+## Why to use it
+
+<p>&nbsp;</p>
+
+* Able to handle multiple module systems (amd, commonjs, ES6 modules)
+* Available loaders for styles management (sass, less, postcss, css modules) 
+* Manage images - fonts
+* No need to use a task runner (gulp-grunt) if combine npm scripts with webpack
+
+!SLIDE
+## Available resources
+
+<p>&nbsp;</p>
+
+* <a href="https://webpack.github.io">Official webpack site</a>
+* <a href="https://www.youtube.com/watch?v=MzVFrIAwwS8">Advanced webpack - Jonathan Creamer</a> 
+* <a href="http://survivejs.com">Survivejs book - Juho Vepsäläinen</a>
+* <a href="http://jamesknelson.com/using-es6-in-the-browser-with-babel-6-and-webpack/">Using ES6 and ES7 in the Browser, with Babel 6 and Webpack - James K Nelson</a>
