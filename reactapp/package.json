@@ -11,50 +11,34 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^6.2.1",
-    "babel-core": "^6.3.21",
-    "babel-loader": "^6.2.0",
-    "babel-plugin-react-transform": "^2.0.0-beta1",
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.1",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
+    "babel-preset-react-hmre": "^1.0.1",
     "css-loader": "^0.23.0",
     "extract-text-webpack-plugin": "^0.9.1",
     "file-loader": "^0.8.5",
     "html-webpack-plugin": "^1.7.0",
     "node-sass": "^3.4.2",
     "postcss-loader": "^0.8.0",
-    "react": "^0.14.3",
     "react-transform-hmr": "^1.0.1",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
-    "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0"
+    "webpack": "^1.12.12",
+    "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
     "lorem-ipsum": "^1.0.3",
-    "react": "^0.14.3",
-    "react-dom": "^0.14.3"
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6"
   },
   "babel": {
     "env": {
       "development": {
-        "plugins": [
-          [
-            "react-transform",
-            {
-              "transforms": [
-                {
-                  "transform": "react-transform-hmr",
-                  "imports": [
-                    "react"
-                  ],
-                  "locals": [
-                    "module"
-                  ]
-                }
-              ]
-            }
-          ]
+        "presets": [
+          "react-hmre"
         ]
       }
     }
