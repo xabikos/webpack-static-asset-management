@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import loremIpsum from 'lorem-ipsum';
 
-import '../styles/style.scss'
-
 import Counter from './counter.jsx';
+import NavBar from './navBar.jsx';
+import Jumbotron from './jumbotron.jsx';
+import MainContent from './mainContent.jsx';
+
 import logo from '../images/logo.png';
 
 class App extends Component {
@@ -14,6 +16,9 @@ class App extends Component {
     });
     return (
       <div>
+        <NavBar />
+        <Jumbotron />
+        <MainContent />
         <a href="#"><img alt="SKG nodejs meetup" src={logo} /></a>
         {result}
         <div id="counter">
