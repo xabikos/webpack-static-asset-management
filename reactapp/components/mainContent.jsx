@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 
-import SearchForm from './searchForm.jsx';
-import RepositoriesList from './repositoriesList.jsx';
-import RepositoryDetails from './repositoryDetails.jsx';
+import SearchForm from './searchForm';
+import RepositoriesList from './repositoriesList';
+import RepositoryDetails from './repositoryDetails';
 
 class MainContent extends Component {
   render() {
@@ -10,10 +10,10 @@ class MainContent extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-3">
-            <SearchForm />
+            <SearchForm search={this.props.search} />
           </div>
           <div className="col-md-5">
-            <RepositoriesList />
+            <RepositoriesList repositories={this.props.repositories} />
           </div>
           <div className="col-md-4">
             <RepositoryDetails />
@@ -23,5 +23,10 @@ class MainContent extends Component {
     );
   }
 }
+
+MainContent.propTypes = {
+  search: PropTypes.func.isRequired,
+  repositories: PropTypes.array.isRequired,
+};
 
 export default MainContent;

@@ -7,6 +7,9 @@ module.exports = {
   output: {
     filename: 'build/bundle.js'
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
   module: {
     loaders: [
       {
@@ -27,6 +30,7 @@ module.exports = {
       }
     ]
   },
+  devtool: 'source-map',
   devServer: {
     host: "0.0.0.0",
     port: "3000",

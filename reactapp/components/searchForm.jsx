@@ -1,6 +1,20 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 
 class SearchForm extends Component {
+  constructor(props) {
+    super(props);
+    
+    this.handleClick = this.handleClick.bind(this);
+  }
+  
+  
+  handleClick() {
+    const repositoryValue = this.refs.repository.value;
+    if (repositoryValue) {
+      this.props.search(repositoryValue);
+    }
+  }
+  
   render() {
     return (
       <div>
@@ -8,6 +22,7 @@ class SearchForm extends Component {
           <label htmlFor="repositoryName">Enter a repository name to get statistics</label>
           <input
             type="text"
+            ref="repository"
             className="form-control"
             id="repositoryName"
             placeholder="Enter repository name"
@@ -23,10 +38,14 @@ class SearchForm extends Component {
             <option>Python</option>
           </select>
         </fieldset>
-        <button type="submit" className="btn btn-primary">Search</button>
+        <button className="btn btn-primary" onClick={this.handleClick}>Search</button>
       </div>
     );
   }
 }
+
+SearchForm.propTypes = {
+  search: PropTypes.func.isRequired,
+};
 
 export default SearchForm;
