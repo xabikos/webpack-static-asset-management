@@ -8,7 +8,7 @@ class RepositoriesList extends Component {
     return (
       <div id="repositoriesList">
         {this.props.repositories.map(rep=> {
-          return <RepositoryItem key={rep.id} {...rep} />
+          return <RepositoryItem key={rep.id} onSelect={this.props.selectRepository} {...rep} />
         })}
       </div>
     );
@@ -17,6 +17,7 @@ class RepositoriesList extends Component {
 
 RepositoriesList.propTypes = {
   repositories: PropTypes.array.isRequired,
+  selectRepository: PropTypes.func.isRequired,
 };
 
 export default RepositoriesList;

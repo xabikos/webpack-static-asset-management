@@ -7,7 +7,6 @@ class SearchForm extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
   
-  
   handleClick() {
     const repositoryValue = this.refs.repository.value;
     const languageValue = this.refs.language.value;

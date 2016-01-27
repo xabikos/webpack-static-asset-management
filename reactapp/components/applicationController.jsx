@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import _ from 'lodash';
 
 import ApiService from '../apiService.js';
 import MainContent from './mainContent.jsx';
@@ -7,8 +8,9 @@ class ApplicationController extends Component {
   constructor(props) {
     super(props);
     
-    this.state = {repositories: []}; 
+    this.state = {repositories: [], activeRepository: {}}; 
     this.handleSearch = this.handleSearch.bind(this);
+    this.handleRepositorySelected = this.handleRepositorySelected.bind(this);
   }
   
   handleSearch(search, language) {
@@ -17,11 +19,20 @@ class ApplicationController extends Component {
     });
   }
   
+  handleRepositorySelected(id) {
+    const repo = _.find(this.state.repositories, {id});
+    if (repo) {
+      this.setState({activeRepository: repo});
+    }
+  }
+  
   render() {
     return (
       <MainContent
         search={this.handleSearch}
         repositories={this.state.repositories}
+        selectRepository={this.handleRepositorySelected}
+        activeRepository={this.state.activeRepository}
       />
     );
   }

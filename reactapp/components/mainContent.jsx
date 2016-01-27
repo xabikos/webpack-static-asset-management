@@ -10,13 +10,16 @@ class MainContent extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-3">
-            <SearchForm search={this.props.search} />
+            <SearchForm search={this.props.search}/>
           </div>
           <div className="col-md-5">
-            <RepositoriesList repositories={this.props.repositories} />
+            <RepositoriesList
+              repositories={this.props.repositories}
+              selectRepository={this.props.selectRepository}
+            />
           </div>
           <div className="col-md-4">
-            <RepositoryDetails />
+            <RepositoryDetails {...this.props.activeRepository}/>
           </div>
         </div>
       </div>
@@ -27,6 +30,8 @@ class MainContent extends Component {
 MainContent.propTypes = {
   search: PropTypes.func.isRequired,
   repositories: PropTypes.array.isRequired,
+  selectRepository: PropTypes.func.isRequired,
+  activeRepository: PropTypes.object,
 };
 
 export default MainContent;
