@@ -5,9 +5,9 @@ class RepositoryItem extends Component {
     return (
       <div className="card card-block text-xs-center">
         <h4 className="card-title">{this.props.full_name}</h4>
-        <h6 className="card-subtitle">Score: {this.props.score}</h6>
+        <h6 className="card-subtitle">Score: <strong>{this.props.score}</strong></h6>
         <p className="card-text">{this.props.description}</p>
-        <a href={this.props.html_url} className="card-link">Github repo</a>        
+        <a href={this.props.html_url} target="_blank" className="card-link">Github repo</a>        
       </div>
     );
   }

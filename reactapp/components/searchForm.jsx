@@ -10,8 +10,13 @@ class SearchForm extends Component {
   
   handleClick() {
     const repositoryValue = this.refs.repository.value;
+    const languageValue = this.refs.language.value;
     if (repositoryValue) {
-      this.props.search(repositoryValue);
+      if (languageValue !== 'undefined') {
+        this.props.search(repositoryValue, languageValue);  
+      } else {
+        this.props.search(repositoryValue);
+      }
     }
   }
   
@@ -30,12 +35,13 @@ class SearchForm extends Component {
         </fieldset>
         <fieldset className="form-group">
           <label htmlFor="language">Optianally select a language</label>
-          <select className="form-control" id="language">
-            <option>JavaScript</option>
-            <option>C#</option>
-            <option>Python</option>
-            <option>Ruby</option>
-            <option>Python</option>
+          <select className="form-control" id="language" ref="language">
+            <option value="undefined">Select a language</option>
+            <option value="javascript">JavaScript</option>
+            <option value="csharp">C#</option>
+            <option value="python">Python</option>
+            <option value="ruby">Ruby</option>
+            <option value="java">Java</option>
           </select>
         </fieldset>
         <button className="btn btn-primary" onClick={this.handleClick}>Search</button>

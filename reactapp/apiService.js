@@ -4,8 +4,11 @@ const urlBase = 'https://api.github.com/';
 
 export default {
   searchRepositories(search, language) {
-    const finalUrl = `${urlBase}search/repositories?q=${search}`;
-    return axios.get(finalUrl)
+    let url = `${urlBase}search/repositories?q=${search}`;
+    if (language) {
+      url += `+language:${language}`;
+    }
+    return axios.get(url)
                 .then(response => {
                   return response.data;
                 });
