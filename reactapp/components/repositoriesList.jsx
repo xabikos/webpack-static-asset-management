@@ -4,12 +4,11 @@ import RepositoryItem from './repositoryItem';
 
 class RepositoriesList extends Component {
   render() {
-     
     return (
       <div id="repositoriesList">
-        {this.props.repositories.map(rep=> {
-          return <RepositoryItem key={rep.id} onSelect={this.props.selectRepository} {...rep} />
-        })}
+        {this.props.repositories.map(rep =>
+          <RepositoryItem key={rep.id} onSelect={this.props.selectRepository} {...rep} />
+        )}
       </div>
     );
   }

@@ -21,7 +21,7 @@ class RepositoryDetails extends Component {
   }
 }
 
-RepositoryDetails.PropTypes = {
+RepositoryDetails.propTypes = {
   id: PropTypes.number.isRequired,
   full_name: PropTypes.string.isRequired,
   description: PropTypes.string,

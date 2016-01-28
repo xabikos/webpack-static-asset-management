@@ -3,22 +3,22 @@ import React, {Component, PropTypes} from 'react';
 class SearchForm extends Component {
   constructor(props) {
     super(props);
-    
+
     this.handleClick = this.handleClick.bind(this);
   }
-  
+
   handleClick() {
     const repositoryValue = this.refs.repository.value;
     const languageValue = this.refs.language.value;
     if (repositoryValue) {
       if (languageValue !== 'undefined') {
-        this.props.search(repositoryValue, languageValue);  
+        this.props.search(repositoryValue, languageValue);
       } else {
         this.props.search(repositoryValue);
       }
     }
   }
-  
+
   render() {
     return (
       <div>
@@ -30,7 +30,7 @@ class SearchForm extends Component {
             className="form-control"
             id="repositoryName"
             placeholder="Enter repository name"
-          />        
+          />
         </fieldset>
         <fieldset className="form-group">
           <label htmlFor="language">Optianally select a language</label>

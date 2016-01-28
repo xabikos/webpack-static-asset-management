@@ -18,7 +18,17 @@ module.exports = {
     filename: '[name]-[hash].min.js',
     pathinfo: false
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
   module: {
+    preLoaders: [
+      {
+        test: /\.jsx?$/,
+        loader: 'eslint',
+        exclude: /node_modules/
+      }
+    ],
     loaders: [
       {
         test: /\.jsx?$/,

@@ -6,7 +6,10 @@ class Jumbotron extends Component {
       <div className="jumbotron jumbotron-fluid">
         <div className="container">
           <h1 className="display-5">Hello, Webpackers!</h1>
-          <p className="lead">This is an example application to demonstrate how we can use Webpack to prepare the production asset bundles.</p>          
+          <p className="lead">
+            This is an example application to demonstrate how we can use Webpack
+            to prepare the production asset bundles.
+          </p>
         </div>
       </div>
     );

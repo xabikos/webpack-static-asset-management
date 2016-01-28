@@ -4,8 +4,6 @@ import NavBar from './navBar.jsx';
 import Jumbotron from './jumbotron.jsx';
 import ApplicationController from './applicationController.jsx';
 
-import logo from '../images/logo.png';
-
 class App extends Component {
   render() {
     return (
