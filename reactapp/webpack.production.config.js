@@ -4,39 +4,25 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var autoprefixer = require('autoprefixer');
 
-var pkg = require('./package.json');
-
 var ROOT_PATH = path.resolve(__dirname);
 
 module.exports = {
   entry: {
-    app: './index.js',
-    vendor: Object.keys(pkg.dependencies)
+    app: './index.js'
   },
   output: {
     path: path.resolve(ROOT_PATH, 'dist'),
-    filename: '[name]-[hash].min.js',
-    pathinfo: false
+    filename: 'bundle.js'
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
   module: {
-    preLoaders: [
-      {
-        test: /\.jsx?$/,
-        loader: 'eslint',
-        exclude: /node_modules/
-      }
-    ],
     loaders: [
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['es2015', 'react'],
-        }
+        exclude: /node_modules/,        
       },
       {
         test: /\.scss/,
@@ -49,30 +35,13 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.CommonsChunkPlugin(
-      'vendor',
-      '[name]-[hash].min.js'
-    ),
+  plugins: [    
     new HtmlWebpackPlugin({
       template: 'templates/index.html',
       inject: 'body',
       filename: 'index.html'
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        screw_ie8: true
-      }
-    }),
-    new webpack.DefinePlugin({
-      // This affects react lib size
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
-    }),
-    new ExtractTextPlugin('[name]-[hash].min.css')
+    new ExtractTextPlugin('style.css')
   ],
   postcss: function () {
     return [autoprefixer];

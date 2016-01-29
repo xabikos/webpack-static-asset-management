@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dist": "BABEL_ENV=production webpack --bail --progress --colors --config webpack.production.config.js"
+    "dist": "SET BABEL_ENV=production && webpack --bail --progress --colors --config webpack.production.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -43,6 +43,7 @@
     "react-dom": "^0.14.6"
   },
   "babel": {
+    "presets": ["es2015", "react"],
     "env": {
       "development": {
         "presets": [
