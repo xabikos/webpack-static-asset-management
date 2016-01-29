@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import NavBar from './navBar.jsx';
 import Jumbotron from './jumbotron.jsx';
 import ApplicationController from './applicationController.jsx';
+import Footer from './footer';
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
         <NavBar />
         <Jumbotron />
         <ApplicationController />
+        <Footer />
       </div>
     );
   }

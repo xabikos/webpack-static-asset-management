@@ -6,3 +6,16 @@
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
+#footer {
+  img {
+    height: 160px;
+  }
+}
+
+.jumbotron img {
+  height: 80px;
+  position: absolute;
+  right: 0;
+  top: 55px;
+}

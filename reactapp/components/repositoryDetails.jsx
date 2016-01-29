@@ -22,10 +22,10 @@ class RepositoryDetails extends Component {
 }
 
 RepositoryDetails.propTypes = {
-  id: PropTypes.number.isRequired,
-  full_name: PropTypes.string.isRequired,
+  id: PropTypes.number,
+  full_name: PropTypes.string,
   description: PropTypes.string,
-  created_at: PropTypes.string.isRequired,
+  created_at: PropTypes.string,
   stargazers_count: PropTypes.number,
   watchers_count: PropTypes.number,
 };

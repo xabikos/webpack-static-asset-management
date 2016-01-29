@@ -22,7 +22,7 @@ module.exports = {
         loaders: ["style", "css", "postcss", "sass"]
       },
       {
-        test: /\.png/,
+        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
         loader: "url?limit=10000&minetype=image/png"
       }
     ]
